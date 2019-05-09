@@ -27,6 +27,18 @@ class App extends Component {
     this.setState({ activePage : page});
   };
 
+  //Choosing which page to display
+  displayPage = () => {
+    if(this.state.activePage === "Home") {
+      return <Home/>
+    }  else if (this.state.activePage === "Search") {
+        return <Search/>
+    } else if (this.state.activePage === "Saved") {
+      return <Saved/>
+    }
+  };
+
+
   render() {
     return (
       <div className="App">
