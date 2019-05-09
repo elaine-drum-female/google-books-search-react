@@ -22,7 +22,10 @@ class App extends Component {
     activePage: "Search"
   };
 
-   
+   //Initializing new setState of whatever page is currently active
+  handlePageChange = page => {
+    this.setState({ activePage : page});
+  };
 
   render() {
     return (
