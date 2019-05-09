@@ -1,0 +1,51 @@
+import React, {Component} from 'react';
+import API from "../../utils/API";
+import {BookDetail, BookResults} from "../BookDetail";
+
+class BooksSaved extends Component {
+
+  state = {
+    saved:[]
+  };
+
+  componentDidMount() {
+    this.loadBooks();
+    console.log(this.state.saved);
+  }
+
+  handleClick = event => {
+    console.log(event.target.key)
+  }
+
+  handleDeletedData = id => {
+      API.deleteBook(id).then(res => this.loadBooks());
+  }
+
+  
+  // Loads all books  and sets them to this.state.books
+  loadBooks = () => {
+    API.retrieveAllBooks()
+      .then(res =>
+        this.setState({ saved: res.data })
+        // console.log(res)
+      )
+      .catch(err => console.log(err));
+  };
+
+render() {
+  return (
+    <div>
+    {this.state.saved.length > 0 ? 
+    <BookDetail>
+          
+    </BookDetail>
+      : <p>No results</p>
+      }
+    </div>
+    )}
+
+}  
+
+
+export default BooksSaved;
+
