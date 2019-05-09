@@ -8,7 +8,12 @@ class BooksSaved extends Component {
     saved:[]
   };
 
- 
+  componentDidMount() {
+    this.loadBooks();
+    console.log(this.state.saved);
+  }
+
+  
 
 render() {
   return (
