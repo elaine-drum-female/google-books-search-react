@@ -13,6 +13,16 @@ class BooksSaved extends Component {
     console.log(this.state.saved);
   }
 
+  handleClick = event => {
+    console.log(event.target.key)
+  }
+
+  handleDeletedData = id => {
+      API.deleteBook(id).then(res => this.loadBooks());
+  }
+
+  
+  
   
 
 render() {
