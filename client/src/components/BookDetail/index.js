@@ -7,3 +7,21 @@ export function BookDetail ({ children }) {
     </ul>;
 }
 
+export function BookResults(props) {
+    return (
+    <li>
+        <div>
+            <img src={props.image} alt={props.image}/>
+            <h3>{props.title}</h3>
+            <h3>{props.author}</h3>
+            <p>{props.description}</p>
+            <a href={props.link}>{props.link}</a>
+            <button onClick={() => 
+                props.handleClick(props.info)}>{props.buttonText}</button>
+            
+        </div>
+    </li>
+       
+    );
+}
+
