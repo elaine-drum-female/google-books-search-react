@@ -17,6 +17,11 @@ class App extends Component {
     });
   }
 
+  //Setting up state.currentPage
+  state = {
+    activePage: "Search"
+  };
+
    
 
   render() {
