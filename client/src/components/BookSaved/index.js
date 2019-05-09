@@ -8,29 +8,7 @@ class BooksSaved extends Component {
     saved:[]
   };
 
-  componentDidMount() {
-    this.loadBooks();
-    console.log(this.state.saved);
-  }
-
-  handleClick = event => {
-    console.log(event.target.key)
-  }
-
-  handleDeletedData = id => {
-      API.deleteBook(id).then(res => this.loadBooks());
-  }
-
-  
-  // Loads all books  and sets them to this.state.books
-  loadBooks = () => {
-    API.retrieveAllBooks()
-      .then(res =>
-        this.setState({ saved: res.data })
-        // console.log(res)
-      )
-      .catch(err => console.log(err));
-  };
+ 
 
 render() {
   return (
