@@ -20,9 +20,6 @@ class BooksSaved extends Component {
   handleDeletedData = id => {
       API.deleteBook(id).then(res => this.loadBooks());
   }
-
-  
-  
   
 
 render() {
